@@ -76,6 +76,7 @@ class AuthController extends Controller
                         'data' => [
                             'message' => 'Logged in successfully.',
                             'token' => $this->jwt($user),
+                            'user' => $user
                         ],
                         'success' => false,
                         'status' => 200,
