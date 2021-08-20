@@ -174,6 +174,7 @@ class AuthController extends Controller
             $user->user_name = $request->username;
             $user->password = Hash::make($request->password);
             $user->role = '1';
+            $user->status = '0';
             $user->registered_at = Carbon::now()->toDateTimeString();
             $user->created_at = Carbon::now()->toDateTimeString();
             $user->updated_at = Carbon::now()->toDateTimeString();

@@ -16,9 +16,8 @@ class ProfileController extends Controller
     public function update(Request $request)
     {
         try {
-            $validator = Validator::make($this->request->all(), [
+            $validator = Validator::make($request->all(), [
                 'name' => 'required',
-                'password' => 'required',
             ]);
 
             if ($validator->fails()) {
@@ -54,6 +53,7 @@ class ProfileController extends Controller
             return response()->json([
                 'data' => [
                     'message' => 'Profile updated successfully.',
+                    'user' => Auth::user()
                 ],
                 'success' => false,
                 'status' => 200,
